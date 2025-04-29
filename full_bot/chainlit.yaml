@@ -1,0 +1,68 @@
+# chainlit.yml
+
+# Interface settings
+ui:
+  name: "Chainlit Chatbot"
+  description: "A simple Question Answering Stateful chatbot with GitHub and Google authentication built with Python, UV, and Chainlit."
+
+# Message settings
+default_expand_messages: true
+
+# Auth settings
+auth:
+  required: false  # Optional login: users can choose to log in or not
+  providers: 
+    - github
+    - google  # Add Google as an auth provider
+
+# OAuth Configuration
+oauth_providers:
+  github:
+    client_id: ${OAUTH_GITHUB_CLIENT_ID}
+    client_secret: ${OAUTH_GITHUB_CLIENT_SECRET}
+  google:
+    client_id: ${OAUTH_GOOGLE_CLIENT_ID}
+    client_secret: ${OAUTH_GOOGLE_CLIENT_SECRET}
+
+# Chatbot Flow Settings
+chatflow:
+  - type: text
+    text: "Welcome to the Chainlit Chatbot! 👋 How would you like to proceed?"
+
+  - type: quick_replies
+    text: "You can either log in or continue without an account."
+    replies:
+      - title: "Log in with GitHub"
+        action: "login_github"
+      - title: "Log in with Google"
+        action: "login_google"
+      - title: "Continue without an account"
+        action: "continue_without_account"
+
+# Actions to handle login and continue without login
+actions:
+  - name: "login_github"
+    type: action
+    action: |
+      {
+        "type": "oauth_prompt",
+        "provider": "github",
+        "message": "Please log in with your GitHub account."
+      }
+
+  - name: "login_google"
+    type: action
+    action: |
+      {
+        "type": "oauth_prompt",
+        "provider": "google",
+        "message": "Please log in with your Google account."
+      }
+
+  - name: "continue_without_account"
+    type: action
+    action: |
+      {
+        "type": "text",
+        "text": "You can continue using the chatbot without logging in. Feel free to ask me anything!"
+      }

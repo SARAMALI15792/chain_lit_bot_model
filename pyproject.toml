@@ -1,0 +1,24 @@
+[project]
+name = "full-bot"
+version = "0.1.0"
+description = "A simple bot which works in comparison to ChatGPT"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "chainlit>=2.5.5",
+    "openai-agents>=0.0.13",
+]
+
+[project.scripts]
+full-bot = "full_bot:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# GitHub OAuth Configuration
+[auth.github]
+client_id = "Iv23liw26Lo5Z7RdbVKT"
+client_secret = "b99f761253307ef56e25125c04e7ea27c9da1a3b"
+scopes = ["read:user", "user:email"]  # Add the necessary scopes for email access
+
