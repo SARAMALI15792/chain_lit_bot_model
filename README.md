@@ -19,7 +19,7 @@ A sleek and interactive chatbot interface built using **Chainlit**, designed for
 ## 🖼️ Screenshots
 
 ### 💬 Chat UI  
-![Chat UI](images/chaining.png)
+![Chat UI](images/chain2.png)
 
 ---
 
