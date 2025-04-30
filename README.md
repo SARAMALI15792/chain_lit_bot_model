@@ -29,7 +29,7 @@ A sleek and interactive chatbot interface built using **Chainlit**, designed for
 ---
 
 ### 🧠 Main Dashboard  
-![Main Interface](images/chain3.png)
+![Main Interface](images/chanining.png)
 
 ---
 
