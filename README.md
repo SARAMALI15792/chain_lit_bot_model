@@ -22,13 +22,13 @@ Welcome to **Chainlit**, a sleek, modern, and interactive chatbot interface that
 
 ### 💬 **Chat UI**  
 A sleek, modern interface where the magic happens.  
-![Chat UI](images/img3.png)
+![Chat UI](images/img.png)
 
 ---
 
 ### 🔐 **Login Screen**  
 Sleek and secure login screen.  
-![Login Screen](images/img2.png)
+![Login Screen](images/im2.png)
 
 ---
 
