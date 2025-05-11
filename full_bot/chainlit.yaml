@@ -1,28 +1,26 @@
 # chainlit.yml
 
+chainlit_version: 2.4.1
+
 # Interface settings
 ui:
   name: "Chainlit Chatbot"
-  description: "A simple Question Answering Stateful chatbot with GitHub and Google authentication built with Python, UV, and Chainlit."
+  description: "A simple Question Answering Stateful chatbot with GitHub authentication built with Python, UV, and Chainlit."
 
 # Message settings
 default_expand_messages: true
 
 # Auth settings
 auth:
-  required: false  # Optional login: users can choose to log in or not
+  required: true
   providers: 
     - github
-    - google  # Add Google as an auth provider
 
 # OAuth Configuration
 oauth_providers:
   github:
     client_id: ${OAUTH_GITHUB_CLIENT_ID}
     client_secret: ${OAUTH_GITHUB_CLIENT_SECRET}
-  google:
-    client_id: ${OAUTH_GOOGLE_CLIENT_ID}
-    client_secret: ${OAUTH_GOOGLE_CLIENT_SECRET}
 
 # Chatbot Flow Settings
 chatflow:
